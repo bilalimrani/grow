@@ -1,0 +1,14 @@
+@import "~vue-snotify/styles/material.css";
+
+.modal-body {
+    padding: 15px;
+
+    .modal-button {
+        margin-top: 15px
+    }
+}
+.capitalize {
+    text-transform: capitalize;
+}
+
+
