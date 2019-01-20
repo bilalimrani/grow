@@ -1,6 +1,6 @@
 const config = {
     api: {
-        url: 'http://52.36.238.203/clever-marketing-api/public',
+        url: 'http://localhost/clever-marketing-api/public',
     },
     roles: {
         admin: 'admin',
