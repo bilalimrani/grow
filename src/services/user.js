@@ -56,5 +56,13 @@ export default {
       name: name,
       email: email
     });
+  },
+
+  deleteUser(userId) {
+    return httpClient.delete(`admin/users/${userId}`);
+  },
+
+  giveAccess(userId) {
+    return httpClient.put(`admin/users/${userId}`);
   }
 }

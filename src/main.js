@@ -7,6 +7,7 @@ import store from './store'
 import vueHeadful from 'vue-headful';
 import VueStripeCheckout from 'vue-stripe-checkout/dist/index';
 import constants from './constants'
+Vue.use(require('vue-moment'));
 
 import VeeValidate, {
   Validator
@@ -68,12 +69,7 @@ Vue.use(VModal)
 // Register stripe with configuration
 // this configuration can be overridden 
 // in the .open(options) 
-Vue.use(VueStripeCheckout, {
-  key: '',
-  image: constants.payment.image,
-  currency: 'USD',
-  panelLabel: 'Subscribe {{amount}}'
-});
+Vue.use(VueStripeCheckout, 'pk_test_Vgle6aEOYjGIxkvczWdB8f7V',);
 Vue.component('vue-headful', vueHeadful);
 // Filter to make single digit number as two digit by appending 0 in front
 Vue.filter('two_digits', function (value) {

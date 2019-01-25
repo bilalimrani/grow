@@ -25,7 +25,7 @@
               </li>
             </ul>
             <div class="button-cont">
-              <el-button type="danger" @click="planSelected(plan)"> {{ plan.text }}</el-button>
+              <stripe v-bind:planData="plan"></stripe>
             </div>
             <strong>{{plan.growth + '%'}} Growth</strong>
             <p class="plan-desc" v-html="plan.description"></p>
@@ -45,11 +45,13 @@
   import Payment from "../../../services/payment";
   import Notify from "../../../services/notify";
   import constants from "../../../constants";
-  import {sortBy} from 'lodash'
-  import store from '../../../store'
+  import {sortBy} from 'lodash';
+  import store from '../../../store';
+  import paymentStripe from '../paymentComponent/payment';
 
   export default {
     name: "viralproof-plans",
+    components: {'stripe': paymentStripe},
     data() {
       return {
         config: Config,
@@ -159,29 +161,11 @@
       },
 
       checkout (plan) {
+        console.log('okokok');
         this.getPaymentGatewayKey().then(gatewayKey => {
           // this.$checkout.close()
           // is also available.
-          this.$checkout.open({
-            key: gatewayKey,
-            name: plan.name,
-            allowRememberMe: false,
-            currency: 'USD',
-            amount: plan.price * 100, // stripe take price in cents
-            token: (token) => {
-              console.log('token ', token)
-              store.state.showSpinner = true
-              Payment.createSubscription(token.id, plan.id).then(res => {
-                const message = 'You are subscribed'
-                this.$snotify.success(message, 'Success!')
-                this.resetAndGoToDashboard()
-              }, err => {
-                store.state.showSpinner = false
-                const message = err.response.data.errors[0]
-                this.$snotify.error(message, 'Error!')
-              })
-            }
-          });
+          const { token, args } = this.$refs.checkoutRef.open();
         })
       },
 

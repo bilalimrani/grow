@@ -100,6 +100,13 @@
                             <button :disabled="isSubscriptionExpired || isTrialExpired" class="btn insta" @click="opeInstaAccountModal()">
                                 <i class="fab fa-instagram"></i> &nbsp; &nbsp; Connect Instagram Account</button>
                         </div>
+                        <div>
+                            
+                            <video height="240" controls>
+                            <source src="static/videos/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </section>

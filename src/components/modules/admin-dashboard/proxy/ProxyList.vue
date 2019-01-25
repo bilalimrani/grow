@@ -13,6 +13,7 @@
                     <th>Username</th>
                     <th>Password</th>
                     <th>Port</th>
+                    <th>Assigned</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -22,6 +23,7 @@
                     <td>{{proxy.username}}</td>
                     <td>{{proxy.password}}</td>
                     <td>{{proxy.port}}</td>
+                    <td>{{proxy.insta_accounts_count}}</td>
                     <td>
                       <el-button type="primary" icon="el-icon-edit" v-if="proxy" @click="handleAction(index, proxy)">Edit</el-button>
                     </td>

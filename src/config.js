@@ -1,6 +1,6 @@
 const config = {
     api: {
-        url: 'http://localhost/clever-marketing-api/public',
+        url: 'https://growgramgrow.crewlogix.com',
     },
     roles: {
         admin: 'admin',

@@ -32,12 +32,12 @@
               </td>
 
               <td>
-                <!-- Show FREE plan as trial -->
                 {{
                 user.subscription ?
                 (user.subscription.plan.name.toUpperCase() === 'FREE' ? 'TRIAL' : user.subscription.plan.name)
                 : ''
                 }}
+                <span v-on:click="getUnlimitedAccess(user.subscription) == '(Unlimited Access)' ? '' : giveAccess(user)" v-html="getUnlimitedAccess(user.subscription)"></span>
               </td>
               <td>
                 <button v-if="user.insta_accounts.length" :disabled="user.updateInProgress"
@@ -47,7 +47,7 @@
                                      :message="`Do ${user.insta_accounts[0].status === 'INACTIVE' ? 'ACTIVE' : 'INACTIVE'}`"
                                      :loadingMessage="'Loading'"></viralproof-loader>
                 </button>
-                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <button @click="deleteUser(user)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
               </td>
             </tr>
             </tbody>
@@ -82,6 +82,7 @@
     },
     data() {
       return {
+        access: false,
         users: [],
         currentPage: 1
       };
@@ -162,8 +163,68 @@
             console.error("Error occured while fetching users");
           }
         );
+      },
+      deleteUser(user) {
+        User.deleteUser(user.id)
+          .then(res => {
+            const toastSuccess = {
+              body: "User deleted successfully.",
+              title: "Success"
+            };
+            this.getUsers();
+            this.$snotify.success(
+              toastSuccess.body,
+              toastSuccess.title
+            );
+          },
+          err => {
+            const toastSuccess = {
+              body: "Error occured while deleting user.",
+              title: "Error"
+            };
+            this.$snotify.error(toastSuccess.body, toastSuccess.title);
+          });
+      },
+      giveAccess(user){
+        User.giveAccess(user.id)
+          .then(res => {
+            const toastSuccess = {
+              body: "Gave access successfuly",
+              title: "Success"
+            };
+            this.getUsers();
+            this.$snotify.success(
+              toastSuccess.body,
+              toastSuccess.title
+            );
+          },
+          err => {
+            const toastSuccess = {
+              body: "Error occured while deleting user.",
+              title: "Error"
+            };
+            this.$snotify.error(toastSuccess.body, toastSuccess.title);
+          });
+      },
+
+      getUnlimitedAccess(user) {
+        if(new Date(user.ends_at).getFullYear() > new Date().getFullYear()){
+          this.access = false
+          return "(Unlimited Access)";
+        }
+        else {
+          this.access = true;
+          return '<button class="btn btn-primary" click="giveAccess(user)">Unlimited Access</button>';
+        }
       }
     }
   };
 </script>
+
+<style scoped>
+  table tbody tr td:last-child {
+    display: flex;
+    flex-direction: row
+  }
+</style>
 
