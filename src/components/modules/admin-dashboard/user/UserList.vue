@@ -205,25 +205,44 @@
         );
       },
       giveAccess(user){
-        User.giveAccess(user.id)
-          .then(res => {
-            const toastSuccess = {
-              body: "Gave access successfuly",
-              title: "Success"
-            };
-            this.getUsers();
-            this.$snotify.success(
-              toastSuccess.body,
-              toastSuccess.title
-            );
-          },
-          err => {
-            const toastSuccess = {
-              body: "Error occured while deleting user.",
-              title: "Error"
-            };
-            this.$snotify.error(toastSuccess.body, toastSuccess.title);
-          });
+        this.$snotify.confirm(
+          `Are you sure to give access?`,
+          "Confirmation",
+          {
+            closeOnClick: false,
+            pauseOnHover: true,
+            position: "centerTop",
+            buttons: [
+              {
+                text: "Yes",
+                action: toast => {
+                  this.$snotify.remove(toast.id);
+                  User.giveAccess(user.id)
+                  .then(res => {
+                    const toastSuccess = {
+                      body: "Gave access successfuly",
+                      title: "Success"
+                    };
+                    this.getUsers();
+                    this.$snotify.success(
+                      toastSuccess.body,
+                      toastSuccess.title
+                    );
+                  },
+                  err => {
+                    const toastSuccess = {
+                      body: "Error occured while deleting user.",
+                      title: "Error"
+                    };
+                    this.$snotify.error(toastSuccess.body, toastSuccess.title);
+                  });
+                },
+                bold: false
+              },
+              {text: "No", action: toast => this.$snotify.remove(toast.id)}
+            ]
+          }
+        );
       },
 
       getUnlimitedAccess(user) {
