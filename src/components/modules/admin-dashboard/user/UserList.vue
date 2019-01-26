@@ -165,25 +165,44 @@
         );
       },
       deleteUser(user) {
-        User.deleteUser(user.id)
-          .then(res => {
-            const toastSuccess = {
-              body: "User deleted successfully.",
-              title: "Success"
-            };
-            this.getUsers();
-            this.$snotify.success(
-              toastSuccess.body,
-              toastSuccess.title
-            );
-          },
-          err => {
-            const toastSuccess = {
-              body: "Error occured while deleting user.",
-              title: "Error"
-            };
-            this.$snotify.error(toastSuccess.body, toastSuccess.title);
-          });
+        this.$snotify.confirm(
+          `Are you sure to delete?`,
+          "Confirmation",
+          {
+            closeOnClick: false,
+            pauseOnHover: true,
+            position: "centerTop",
+            buttons: [
+              {
+                text: "Yes",
+                action: toast => {
+                  this.$snotify.remove(toast.id);
+                  User.deleteUser(user.id)
+                    .then(res => {
+                      const toastSuccess = {
+                        body: "User deleted successfully.",
+                        title: "Success"
+                      };
+                      this.getUsers();
+                      this.$snotify.success(
+                        toastSuccess.body,
+                        toastSuccess.title
+                      );
+                    },
+                    err => {
+                      const toastSuccess = {
+                        body: "Error occured while deleting user.",
+                        title: "Error"
+                      };
+                      this.$snotify.error(toastSuccess.body, toastSuccess.title);
+                    });
+                },
+                bold: false
+              },
+              {text: "No", action: toast => this.$snotify.remove(toast.id)}
+            ]
+          }
+        );
       },
       giveAccess(user){
         User.giveAccess(user.id)
