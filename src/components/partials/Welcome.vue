@@ -34,20 +34,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-    .welcome-modal {
-        padding: 5px;
-        margin: 10px;
-    }
-    .title {
-        font-weight: 500;
-    }
-
-    .body {
-        margin-top: 20px;
-    }
-
-    .footer {
-        text-align: right;
-    }
-</style>
