@@ -6,9 +6,10 @@ import VueRouter from 'vue-router'
 import store from './store'
 import vueHeadful from 'vue-headful';
 import VueStripeCheckout from 'vue-stripe-checkout/dist/index';
-import constants from './constants'
-Vue.use(require('vue-moment'));
+import constants from './constants';
+import axios from 'axios';
 
+window.axios = axios;
 import VeeValidate, {
   Validator
 } from 'vee-validate'
@@ -69,7 +70,7 @@ Vue.use(VModal)
 // Register stripe with configuration
 // this configuration can be overridden 
 // in the .open(options) 
-Vue.use(VueStripeCheckout, 'pk_test_Vgle6aEOYjGIxkvczWdB8f7V',);
+Vue.use(VueStripeCheckout, 'pk_live_VuY3CS3b5TO2UYfFIfqzPBIf',);
 Vue.component('vue-headful', vueHeadful);
 // Filter to make single digit number as two digit by appending 0 in front
 Vue.filter('two_digits', function (value) {

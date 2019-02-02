@@ -21,6 +21,9 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
+    alias: {
+      'lodash': 'lodash/core',
+    },
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
@@ -31,6 +34,7 @@ module.exports = {
     }
   },
   plugins:[
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.ProvidePlugin({
       $:'jquery',
       jQuery:'jquery',
@@ -58,16 +62,20 @@ module.exports = {
     devtool: "source-map", // any "source-map"-like devtool is possible
     module: {
         rules: [{
+            loader: 'vue-loader',
             test: /\.scss$/,
             use: [{
-                loader: "style-loader"
+                loader: "style-loader",
+                options: { minimize: true }
             }, {
                 loader: "css-loader", options: {
-                    sourceMap: true
+                    sourceMap: true,
+                    options: { minimize: true }
                 }
             }, {
                 loader: "sass-loader", options: {
-                    sourceMap: true
+                    sourceMap: true,
+                    minimize: true
                 }
             }]
         }]
