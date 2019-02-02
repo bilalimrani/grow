@@ -2,8 +2,8 @@
     <header class="main-header">
         <!-- Logo -->
         <div class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels --><span class="logo-mini"><b><a href="http://www.rocketgrowth.org/" target="_Blank"> <img src="static/img/rocket-mini.png" alt="User Image"></a></b></span>
-            <!-- logo for regular state and mobile devices --><span class="logo-lg"><a href="http://www.rocketgrowth.org/" target="_Blank"><img src="/static/img/rocket-logo.png" alt="User Image"></a><!--<span class="lg-txt"><b>Viral</b>proof</span> --></span>
+            <!-- mini logo for sidebar mini 50x50 pixels --><span class="logo-mini"><b><a href="https://growgramgrow.com/" target="_Blank"> <img src="static/img/growlogo.png" alt="User Image"></a></b></span>
+            <!-- logo for regular state and mobile devices --><span class="logo-lg"><a href="https://growgramgrow.com/" target="_Blank"><img src="/static/img/growlogo.png" alt="User Image"></a><!--<span class="lg-txt"><b>Viral</b>proof</span> --></span>
         </div>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -13,8 +13,8 @@
                         <form id="demo-2">
 	<!-- <input class="devin-search" type="search"> -->
 </form>
-    
-    
+
+
     </div>
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
@@ -130,12 +130,12 @@
                     <!-- Control Sidebar Toggle Button -->
                     <!-- <li>
                         <el-dropdown class="header-dropdown-devin" trigger="click"> <span class="el-dropdown-link">
-                            
+
                             <el-button data-toggle="control-sidebar" type="text" size="small"><i class="ti-menu-alt"></i></el-button>
-                          
+
                           </span> </el-dropdown>
                     </li> -->
-                  
+
                 </ul>
             </div>
         </nav>

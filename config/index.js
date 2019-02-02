@@ -18,13 +18,13 @@ module.exports = {
   },
   dev: {
     env: require('./prod.env'),
-    port: 4040,
+    port: 8000,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       // proxy all requests starting with /api to jsonplaceholder
       '/api': {
-        target: 'http://localhost:4040/',//'http://127.0.0.1:8000/',
+        target: 'http://localhost:8000/',//'http://127.0.0.1:8000/',
        // changeOrigin: true,
         // pathRewrite: {
         //   '^/api': ''

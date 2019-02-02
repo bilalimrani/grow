@@ -1,7 +1,7 @@
 <template>
     <div>
         <vue-headful
-            title="Login - Rocket Growth"
+            title="Login - GrowGramGrow"
             description=""
         />
         <div class="limiter">
@@ -38,7 +38,7 @@
                                 Remember me
                             </label>
                         </div> -->
-                        
+
                         <div class="container-login100-form-btn p-t-25">
                             <button class="login100-form-btn" type="submit">
                                 Login
@@ -47,7 +47,7 @@
 
                         <!-- <div class="text-center w-full p-t-42 p-b-22">
                             <span class="txt1">
-                                Or login with   
+                                Or login with
                             </span>
                         </div>
 
@@ -565,8 +565,8 @@ iframe {
   text-transform: uppercase;
   width: 100%;
   height: 60px;
-   -moz-border-radius: 60px; /* Firefox */  
- -webkit-border-radius: 60px; /* Safari, Chrome */  
+   -moz-border-radius: 60px; /* Firefox */
+ -webkit-border-radius: 60px; /* Safari, Chrome */
  border-radius: 60px; /* CSS3 */
   background: #ff2557;
   display: -webkit-box;

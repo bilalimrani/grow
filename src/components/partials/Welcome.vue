@@ -3,7 +3,7 @@
         <modal name="welcome-modal" :width="300" :height="190">
             <div class="welcome-modal">
                 <div class="header">
-                <header class="title">Welcome to Rocket Growth!</header>
+                <header class="title">Welcome to GrowGramGrow!</header>
                 </div>
                 <div class="body">
                     <p>Let's get started!</p>

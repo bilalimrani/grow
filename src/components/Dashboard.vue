@@ -1,7 +1,7 @@
 <template>
   <div>
     <vue-headful
-        title="Dashboard - Rocket Growth"
+        title="Dashboard - GrowGramGrow"
         description=""
     />
     <app-header></app-header>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <vue-headful
-      title="Signup - Rocket Growth"
+      title="Signup - GrowGramGrow"
       description=""
     />
     <div class="limiter">

@@ -45,7 +45,7 @@
                                         <span class="use-plan">{{ userInfo.subscription ? userInfo.subscription.current_plan : '' }}</span>
                                     </div>
                                     <h4 class="user-name">{{instagramAccountInfo.full_name}}</h4>
-                                    <h4>You started using Rocket Growth when you had {{ userInfo.insta_accounts[0].followers ? userInfo.insta_accounts[0].followers
+                                    <h4>You started using GrowGramGrow when you had {{ userInfo.insta_accounts[0].followers ? userInfo.insta_accounts[0].followers
                                         : 0}} followers</h4>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                                 <i class="fab fa-instagram"></i> &nbsp; &nbsp; Connect Instagram Account</button>
                         </div>
                         <div>
-                            
+
                             <video height="240" controls>
                             <source src="static/videos/video.mp4" type="video/mp4">
                             Your browser does not support the video tag.

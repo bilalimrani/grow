@@ -78,7 +78,7 @@
                   </div>
                   <div class="col-md-6 act">
                     <el-input-number size="small" name="min_likes_count" v-model="activitySettings.min_likes_count" :min="0"></el-input-number>
-                  
+
                     <!-- <el-input v-validate="'required|min_value:0'" name="min_like_count" placeholder="" v-model="activitySettings.min_likes_count"> -->
                     <!-- </el-input> -->
                   </div>
@@ -162,7 +162,7 @@
           <div class="container-widget-two">
             <div class="widget-two switches filter-sett clearfix">
             <h4 class="main-head">Comments</h4>
-              <p>The comments that Rocket Growth posts on your behalf - if enabled </p>
+              <p>The comments that GrowGramGrow posts on your behalf - if enabled </p>
               <vproof-chips :chips="commentSettings.comments" @remove="removeComment($event, commentSettings.comments)"></vproof-chips>
               <el-input type="textarea" name="textarea" :rows="2" class="full"  placeholder="Enter Comments..." v-model="commentSettings.comment"></el-input>
               <button :disabled="addCommentInProgress" class="btn btn-primary full cstm-btn" @click="addComment(commentSettings.comment)">
@@ -273,7 +273,7 @@ export default {
         {
           active: "SYSTEM",
           inactive: "",
-          text: `Unfollow everyone who is followed by Rocket Growth`,
+          text: `Unfollow everyone who is followed by GrowGramGrow`,
           key: 3,
           value: ""
         }
