@@ -1,6 +1,6 @@
 const config = {
     api: {
-        url: 'https://growgramgrow.crewlogix.com',
+        url: 'http://18.219.246.109/rocket-growth/public',
     },
     roles: {
         admin: 'admin',

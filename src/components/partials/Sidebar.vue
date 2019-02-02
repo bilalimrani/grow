@@ -10,11 +10,11 @@
                     <div class="info">
                         <p class="capitalize">Hi {{user.fname}}!</p>
                         <!-- <p><small>You haven,t miss any task this week!</small></p> -->
-                        <div> 
+                        <div>
                             <router-link :to="{ path: '/plans' }" v-if="!showAdminNav">
                                 <i @click="closeSidebar" class="ti-panel"></i><small>Plans</small>
                             </router-link>
-                            <a href="javascript:;" @click="logout"><i class="ti-power-off"></i><small>Logout</small></a> 
+                            <a href="javascript:;" @click="logout"><i class="ti-power-off"></i><small>Logout</small></a>
                         </div>
                     </div> <img class="bg-user" src="static/img/avatar-bg.png" alt="User Image"> </div>
                 <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -48,11 +48,11 @@
                             <li class="active">
                                 <router-link to="/blank-page">
                                     <avatar username="Blank Page" :size='20' color="#fff"></avatar> Blank Page</router-link>
-                            </li>  
+                            </li>
                             <li class="active">
                                 <router-link to="/blank-page">
                                     <avatar username="Blank Page" :size='20' color="#fff"></avatar> Blank Page</router-link>
-                            </li>  
+                            </li>
                             <li class="active">
                                 <router-link to="/blank-page">
                                     <avatar username="Blank Page" :size='20' color="#fff"></avatar> Blank Page</router-link>
@@ -191,7 +191,7 @@ export default {
         res => {
           this.user.insta_accounts[0].status = statusList[status];
           const toastSuccess = {
-            body: `Rocket Growth is ${statusList[status].toLowerCase()} now`,
+            body: `GrowGramGrow is ${statusList[status].toLowerCase()} now`,
             title: "Success"
           };
           this.$snotify.success(toastSuccess.body, toastSuccess.title);
