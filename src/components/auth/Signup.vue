@@ -46,7 +46,7 @@
 
               <div class="wrap-input100 validate-input m-b-16">
                 <input class="input100" type="password" name="password" v-model="password" placeholder="Password"
-                       v-validate="'required|min:6'" data-vv-delay="1000">
+                       v-validate="'required|min:6'" data-vv-delay="1000" ref="password">
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
                                 <span class="lnr lnr-lock"></span>
@@ -57,7 +57,7 @@
               <div class="wrap-input100 validate-input m-b-16">
                 <input class="input100" type="password" name="confirmPassword" v-model="confirmPassword"
                        placeholder="Confirm Password" v-validate="'required|min:6|confirmed:password'"
-                       data-vv-delay="1000">
+                       data-vv-delay="1000" data-vv-as="password">
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
                                 <span class="lnr lnr-lock"></span>
